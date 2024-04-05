@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"> <!-- Tab er upore logo 40x40 px -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Set Schedule</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav_logo">
+          <h1><a href="Login.html">Interactive Consultation System | ICS </a></h1>
+        </div>
+        <ul class="nav_link">
+          <li><a href="#">Students</a></li>
+          <li><a href="#">Teachers</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="SetSchedule">
+        <div class="SetSchedule_Box">
+          <form action="action_page.php" style="border:1px solid #ccc">
+            <div class="container">
+              <h1>Set Schedule</h1>
+              <p>Please select your class timings.</p> 
+              <hr>
+
+              <div class="Semester">
+                <button class="dropbtn">Semester</button>
+                <div class="dropdown-content">
+                  <input type="radio" id="semester" name="semester" value="Spring24">
+                  <label for="std">Spring24</label>
+                  <input type="radio" id="semester" name="semester" value="Summer24">
+                  <label for="teacher">Summer24</label>
+                  <input type="radio" id="semester" name="semester" value="Fall24">
+                  <label for="teacher">Fall24</label>
+                </div>
+              </div>
+              <br>
+
+              <label for="Course1"><b>Course 1</b></label><br>
+              <input type="text" placeholder="Course 1" name="course1">
+              <label><input type="checkbox" name="lab" style="margin-bottom:15px">Lab Included</label><br>
+              
+              <input type="number" placeholder = "Input Section here" name= "section1"><br>
+              
+
+
+              <label for="Course2"><b>Course 2</b></label><br>
+              <input type="text" placeholder="Course 2" name="course2">
+              <label><input type="checkbox" name="lab" style="margin-bottom:15px">Lab Included</label><br>
+              
+              <input type="number" placeholder = "Input Section here" name= "section2"><br>
+
+
+              <label for="Course3"><b>Course 3</b></label><br>
+              <input type="text" placeholder="Course 3" name="course3">
+              <label><input type="checkbox" name="lab" style="margin-bottom:15px">Lab Included</label><br>
+              
+              <input type="number" placeholder = "Input Section here" name= "section3"><br>
+
+
+              <label for="Course4"><b>Course 4</b></label><br>
+              <input type="text" placeholder="Course 4" name="course4">
+              <label><input type="checkbox" name="lab" style="margin-bottom:15px">Lab Included</label><br>
+
+              <input type="number" placeholder = "Input Section here" name= "section4"><br>
+
+
+              <label for="Course5"><b>Course 5</b></label><br>
+              <input type="text" placeholder="Course 5" name="course5">
+              <label><input type="checkbox" name="lab" style="margin-bottom:15px">Lab Included</label><br>
+
+              <input type="number" placeholder = "Input Section here" name= "section5"><br>
+
+
+          
+              <div class="clearfix">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn">Set Schedule</button>
+              </div>
+            </div>
+          </form>
+
+      </section>
+    </main>
+  </body>
+</html>
