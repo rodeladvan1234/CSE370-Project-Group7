@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICS | Faculty | Dashboard</title>
+    <style>
+        body {
+            font-family: Tahoma;
+            background-color: #e9ebee;
+            margin: 0;
+            padding: 0;
+        }
+        #title {
+		    height:95px;
+            background-color: #007bff;
+            color: #d9dfeb;
+            padding: 4px 10px;
+            font-size: 40px;
+        }
+        .container {
+            display: flex;
+            justify-content: start;
+			color: white;;
+            gap: 20px;
+            padding: 10px;
+			font-size: 15px;
+        }
+        .button {
+
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+			font-family: Tahoma;
+			background-color: (0,0,0);
+            color: black;
+            cursor: pointer;
+			font-size:15px;
+        }
+        .notification {
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            padding: 5px 10px;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+        }
+        .requests {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 30px;
+            width: 250px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,.2);
+            z-index: 1000;
+        }
+        .requests ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .requests li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+        }
+        .requests li:last-child {
+            border-bottom: none;
+        }
+        .requests li:hover {
+            background-color: #f0f0f0;
+        }
+		.schedule-container {
+			margin-top: 20px;
+			overflow-x: auto;
+		}
+		.schedule-table {
+			width: 60%;
+			border-collapse: collapse;
+		}
+		.schedule-table th, .schedule-table td {
+			border: 1px solid #ccc;
+			text-align: left;
+			padding: 8px 20px;
+		}
+		.schedule-table th {
+			background-color: #007bff;
+			color: white;
+		}
+		.schedule-table td {
+			background-color: #ffffff;
+		}
+
+    .button-container {
+        margin: 10px 0;
+    }
+    .schedule-btn {
+        background-color: red; /* red */
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        margin-right: 10px;
+        font-size: 16px;
+    }
+    .schedule-btn.save {
+        background-color:green; /* Green */
+		}
+	.faculty-info {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    .faculty-info div {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="title">Faculty Dashboard
+		<div class="container">
+			<div class="notification" onclick="toggleRequests()">
+				<span>Requests</span>
+				<span class="badge" id="notificationCount">0</span> <!-- Dynamic count -->
+				<div class="requests" id="consultationRequests">
+                <ul>
+                    <!-- Dynamic list of requests -->
+                </ul>
+				</div>
+			</div>
+			<div class="container">
+				<div class="status">
+					<label for="status">Status:</label>
+						<select id="status" name="status">
+							<option value="available">Available</option>
+							<option value="not-available">Not Available</option>
+						</select>
+				</div>
+			</div>
+			<button class="button">Courses</button>		
+			<button class="button">ST</button>
+			<button class="button" onclick="window.location.href='link og the bage';">Schedule to be stup</button>
+		</div>
+    </div>
+	
+
+
+</body>
+</html>
+
+</body>
+</html>
