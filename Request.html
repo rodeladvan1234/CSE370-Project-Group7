@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICS | Student | Dashboard</title>
+</head>
+<body>
+    <h1>Student Dashboard</h1>
+    <button id="requestConsultation" onclick="sendConsultationRequest()">Request Consultation</button>
+	<script>
+function sendConsultationRequest() {
+    // Simulate sending a request by saving details to localStorage
+    const requestDetails = { studentName: "Student A", requestTime: new Date().toLocaleString() };
+    let requests = JSON.parse(localStorage.getItem('consultationRequests')) || [];
+    requests.push(requestDetails);
+    localStorage.setItem('consultationRequests', JSON.stringify(requests));
+    
+    // Show confirmation to the student
+    document.getElementById('confirmationMessage').textContent = 'Consultation request sent successfully!';
+    document.getElementById('confirmationMessage').style.display = 'block';
+}
+</script>
+</body>
+</html>
