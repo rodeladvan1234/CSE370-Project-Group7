@@ -20,10 +20,14 @@
           <h1><a href="Login.html">Interactive Consultation System | ICS </a></h1>
         </div>
         <ul class="nav_link">
-          <li><a href="#">Students</a></li>
-          <li><a href="#">Teachers</a></li>
+          <li><a href="#">Student Dashboard</a></li>
+          <li><a href="#">Teacher Dashboard</a></li>
+          <li><a href="#">ST Dashboard</a></li>
         </ul>
       </nav>
+      <div id='logout'>
+        <button type="button" class="btn-danger">Logout</button>
+      </div>
     </header>
     <main>
         <a href = "consultation.html">Back to Consultation Dashboard</a>
@@ -41,11 +45,12 @@
 
             <p>Request Accepted of student: XXXXX</p><br>
             
-            <p>Student Info: </p>
+            <p>Student Info: </p> <!--Backend pull-->
             
             <div class="Student Info">
             <p>Name: <br> ID: <br> Course & section: <br></p> <br><br>  
             </div>
+            <form id="Consultation_metadata">
 
             <label>Start time<input
               type="time"
@@ -65,7 +70,7 @@
             </label>
             <br>
             <button type="submit" class="consult_register" href = "consultation.html">Done with Ongoing Consultation</button>
-              </div>
+              </form></div>
             </div>
           </form>
 
