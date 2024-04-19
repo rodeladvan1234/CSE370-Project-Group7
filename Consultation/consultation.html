@@ -1,16 +1,10 @@
 <!DOCTYPE html>
+<!-- <User Authentication checked from the url where UserID = xx 
+      For user ID starting with 1> -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="shortcut icon" type="image/png" href="images/favicon.png"> <!-- Tab er upore logo 40x40 px -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
     <title>Consulting Dashboard</title>
   </head>
   <body>
@@ -43,9 +37,15 @@
                 <a href = "ongoingConso.html">Ongoing Consultations</a>
                 <br><br>
 
-              <p>My reviews: </p><br> <!--Backend Fetch from feedback-->
+              <p>My reviews: </p><br>
+              <div class="reviews">
+                <!-- Fetch and display review data from the backend -->
+                <!-- m = query('select round(avg(rating), 2) as myReviews from feedback where user_id = ?', [user_id])  -->
+                
+              </div>
 
-              <p>Total Consulted Hours: </p><br> <!--Backend Fetch from Consultations-->
+              <p>Total Consulted Hours: </p><br> <!--Backend Fetch from Consultations where SQL is used with query like : 
+                                                  SELECT SUM(DIFFiference of Start time - end time )) FROM Consultation WHERE USER_ID= XX XX  -->
 
             </label>
             <br>

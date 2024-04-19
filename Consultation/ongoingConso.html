@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Need to be completed by someone who is doing requests so that their page sends the data of the student who requested consultation + the faculty user_id -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,13 +21,13 @@
           <h1><a href="Login.html">Interactive Consultation System | ICS </a></h1>
         </div>
         <ul class="nav_link">
-          <li><a href="#">Student Dashboard</a></li>
-          <li><a href="#">Teacher Dashboard</a></li>
-          <li><a href="#">ST Dashboard</a></li>
+          <li><a href="#">Student Dashboard</a></li> <!-- Only shown for Students with user_id starting with 2 -->
+          <li><a href="#">Teacher Dashboard</a></li> <!-- Only shown for Students with user_id starting with 1 -->
+          <li><a href="#">ST Dashboard</a></li> <!-- Only shown for Students with user_id starting with 3 -->
         </ul>
       </nav>
       <div id='logout'>
-        <button type="button" class="btn-danger">Logout</button>
+        <button type="button" class="btn-danger">Logout</button> <!-- Redirects to Login.html with userID removed from URL for authentication and security-->
       </div>
     </header>
     <main>
@@ -43,9 +44,11 @@
                 <a href = "previous.html">Previous Consultations</a>
                 <br><br>
 
-            <p>Request Accepted of student: XXXXX</p><br>
+            <p>Request Accepted of student: XXXXX</p><br> <!-- Will be empty if no student requested  -->
             
-            <p>Student Info: </p> <!--Backend pull-->
+            <p>Student Info: </p> <!--Backend pull from SQL database followed by the request html link -->
+                                  <!-- Select Name, user_id from student --> <!--only student user id is fetched-->>
+                                  <!-- Select from schedule where course and section are same for user_id == faculty_user_id and user_id == student_user_id-->
             
             <div class="Student Info">
             <p>Name: <br> ID: <br> Course & section: <br></p> <br><br>  
@@ -58,7 +61,7 @@
               name="time"
               placeholder="start time"
             />
-            </label>
+            </label> 
 
 
             <label>End Time<input
@@ -70,7 +73,12 @@
             </label>
             <br>
             <button type="submit" class="consult_register" href = "consultation.html">Done with Ongoing Consultation</button>
-              </form></div>
+              </form></div> <!--Send on button press the data to save it in the sql database -->
+                            <!-- INSERT  INTO CONSULTATION values (start_time, end_time in  time, time faculty_user_id= user_id  and student_user_id =  user_id and c_id = (SELECT c_id
+                                FROM consultation
+                                ORDER BY id DESC
+                                LIMIT  1; + 1)
+                             -->
             </div>
           </form>
 

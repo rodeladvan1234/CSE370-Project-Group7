@@ -42,11 +42,13 @@
               <div class="Previous Consultations">
                 <a href = "ongoingConso.html">Ongoing Consultations</a>
                 <br><br>
-            </label>
             <br>
+            <!-- Create a html table here containing columns : c_id, faculty name (fk from user_id), student name, and review -->
+            <!-- The review column will have a button that sends user to the feedback.html with information of faculty_id (fk of user_id) and (student_id) (also fk from student_id) while also integrating them in the url-->
+            <!--the faculty will not have the review button and only the student will -->
+            <!-- data taken from DB connect : select (given info) from consultation where fac_id == user_id and student_id == user_id top 5 (all sql queries in mariadb btw) -->
               </div>
             </div>
-          </form>
 
       </section>
     </main>
