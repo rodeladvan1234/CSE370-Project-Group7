@@ -11,8 +11,8 @@ function fetchReviews($user_id, $conn) {
     } else {
         return "No reviews available.";
     }
-}function fetchTotalHours($user_id, $conn) {
-    $sql = "SELECT SUM(TIMESTAMPDIFF(HOUR, start_time, end_time)) AS totalHours FROM consultation WHERE user_id = '$user_id'";
+}function fetchTotalHours($user_id, $conn) { //repurposed to total student consulted instead of total hours 
+    $sql = "SELECT COUNT(*) AS total_rows FROM consultation WHERE faculty_id = '$user_id'";
     $result = mysqli_query($conn, $sql);
 
     if ($result && mysqli_num_rows($result) > 0) {

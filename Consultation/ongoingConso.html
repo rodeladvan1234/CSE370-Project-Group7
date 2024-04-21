@@ -1,88 +1,125 @@
 <!DOCTYPE html>
-<!-- Need to be completed by someone who is doing requests so that their page sends the data of the student who requested consultation + the faculty user_id -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png"> <!-- Tab er upore logo 40x40 px -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Previous Consultations</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="nav_logo">
-          <h1><a href="Login.html">Interactive Consultation System | ICS </a></h1>
-        </div>
-        <ul class="nav_link">
-          <li><a href="#">Student Dashboard</a></li> <!-- Only shown for Students with user_id starting with 2 -->
-          <li><a href="#">Teacher Dashboard</a></li> <!-- Only shown for Students with user_id starting with 1 -->
-          <li><a href="#">ST Dashboard</a></li> <!-- Only shown for Students with user_id starting with 3 -->
-        </ul>
-      </nav>
-      <div id='logout'>
-        <button type="button" class="btn-danger">Logout</button> <!-- Redirects to Login.html with userID removed from URL for authentication and security-->
-      </div>
-    </header>
-    <main>
-        <a href = "consultation.html">Back to Consultation Dashboard</a>
-      <section class="Consulting Dashboard">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Light gray background */
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #007bff; 
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #007bff; 
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .Consulting_Dashboard {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .Previous a {
+            color: #007bff; /* Teal link color */
+        }
+        
+        h1 {
+            color: white; /* Teal header color */
+        }
+        
+        h2 {
+            color: #007bff; /* Teal header color */
+            margin-top: 20px;
+        }
+        
+        label {
+            margin-top: 10px;
+            display: block;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        .consult_register {
+            background-color: #007bff; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .consult_register:hover {
+            background-color: #007bff; /* Darker teal on hover */
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Interactive Consultation System | ICS</h1>
+</header>
+<main>
+    <a href="consultation.html">Back to Consultation Dashboard</a>
+    <section class="Consulting Dashboard">
         <div class="Consulting_Dashboard">
-          <form action="action_page.php" style="border:1px solid #ccc">
-            <div class="container">
-              <h1>Consultation Information</h1>
-              <p>Manage all your consultation here</p>
-              <hr>
+            <form action="ongoingConso.php?faculty_id=<?php echo $_GET['faculty_id']; ?>" method="POST" style="border:1px solid #ccc">
+                <div class="container">
+                    <h1>Consultation Information</h1>
+                    <p>Manage all your consultation here</p>
+                    <hr>
 
-              <div class="Previous Consultations">
-                <a href = "previous.html">Previous Consultations</a>
-                <br><br>
+                    <div class="Previous Consultations">
+                        <a href="previous.html">Previous Consultations</a>
+                        <br><br>
 
-            <p>Request Accepted of student: XXXXX</p><br> <!-- Will be empty if no student requested  -->
-            
-            <p>Student Info: </p> <!--Backend pull from SQL database followed by the request html link -->
-                                  <!-- Select Name, user_id from student --> <!--only student user id is fetched-->>
-                                  <!-- Select from schedule where course and section are same for user_id == faculty_user_id and user_id == student_user_id-->
-            
-            <div class="Student Info">
-            <p>Name: <br> ID: <br> Course & section: <br></p> <br><br>  
-            </div>
-            <form id="Consultation_metadata">
+                        <h2>Student Info</h2>
+                        <!-- Form to input student information -->
+                        <form id="Consultation_metadata" method="post">
+                            <p>Request Accepted of student:</p><br>
+                            <!-- Input fields for student ID and course code -->
+                            <label for="student">Student ID:</label><br>
+                            <input type="text" id="user_id" name="user_id" required><br>
 
-            <label>Start time<input
-              type="time"
-              id="time"
-              name="time"
-              placeholder="start time"
-            />
-            </label> 
+                            <label for="courseCode">Course Code:</label><br>
+                            <input type="text" id="courseCode" name="courseCode" required><br>
 
-
-            <label>End Time<input
-              type="time"
-              id="time"
-              name="time"
-              placeholder="start time"
-            />
-            </label>
-            <br>
-            <button type="submit" class="consult_register" href = "consultation.html">Done with Ongoing Consultation</button>
-              </form></div> <!--Send on button press the data to save it in the sql database -->
-                            <!-- INSERT  INTO CONSULTATION values (start_time, end_time in  time, time faculty_user_id= user_id  and student_user_id =  user_id and c_id = (SELECT c_id
-                                FROM consultation
-                                ORDER BY id DESC
-                                LIMIT  1; + 1)
-                             -->
-            </div>
-          </form>
-
-      </section>
-    </main>
-  </body>
+                            <!-- Button to submit the form -->
+                            <button type="submit" class="consult_register">Done with Ongoing Consultation</button>
+                        </form>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+</body>
 </html>
