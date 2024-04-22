@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #6699ff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        main {
+            padding: 20px;
+        }
+        .profile {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .profile h2 {
+            margin-top: 0;
+        }
+        .profile-info {
+            margin-bottom: 20px;
+        }
+        .profile-info label {
+            font-weight: bold;
+        }
+        .profile-info p {
+            margin: 5px 0;
+        }
+        .Con {
+            background-color: #800080;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .Con1 {
+            background-color: #800080;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: right;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .Con:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BRACU Interactive Consutation</h1>
+        <ul>
+            <a href="login.html" class="Con1">Log Out</a>
+        </ul>
+    </header>
+    <main>
+        <div class="profile">
+            <h2>Student Info</h2>
+            <div class="profile-info">
+                <label for="student-name">Name:</label>
+                <p id="student-name"><?php echo $userInfo['name']; ?></p>
+            </div>
+            <div class="profile-info">
+                <label for="student-id">Student ID:</label>
+                <p id="student-id"><?php echo $userInfo['Student_ID']; ?></p>
+            </div>
+            <div class="profile-info">
+                <label for="student-email">Email:</label>
+                <p id="student-email"><?php echo $userInfo['email']; ?></p>
+            </div>
+            <div class="profile-info">
+                <label for="student-department">Department:</label>
+                <p id="student-department"><?php echo $userInfo['department']; ?></p>
+            </div>
+           
+            <form method="post">
+                <div class="profile-info">
+                    <label for="course">Course:</label>
+                    <select name="course">
+                        <option value="CSE110">CSE110</option>
+                        <option value="CSE111">CSE111</option>
+					    <option value="CSE220">CSE220</option>
+					    <option value="CSE221">CSE221</option>
+					    <option value="PHY112">PHY112</option>
+                        <option value="PHY111">PHY111</option>
+					    <option value="CSE341">CSE341</option>
+					    <option value="CSE350">CSE350</option>
+					    <option value="CSE360">CSE360</option>
+					    <option value="CSE250">CSE250</option>
+                        <option value="CSE251">CSE251</option>
+					    <option value="CSE330">CSE330</option>
+					    <option value="CSE331">CSE331</option>
+					    <option value="CSE370">CSE370</option>
+					    <option value="CSE420">CSE420</option>
+                        <option value="CSE421">CSE421</option>
+                        <option value="CSE422">CSE422</option>
+                        <option value="CSE423">CSE423</option>
+					    <option value="EEE101">EEE101</option>
+                        <option value="EEE201">EEE201</option>
+					    <option value="EEE203">EEE203</option>
+					    <option value="EEE205">EEE205</option>
+					    <option value="EEE221">EEE221</option>
+                    </select>
+                </div>
+                <div class="profile-info">
+                    <label for="section">Section:</label>
+                    <select name="section">
+                        <option value="1">1</option>
+					    <option value="2">2</option> 
+					    <option value="3">3</option>
+					    <option value="4">4</option>
+					    <option value="5">5</option>
+					    <option value="6">6</option>
+                        <option value="7">7</option>
+					    <option value="8">8</option>
+					    <option value="9">9</option>
+					    <option value="10">10</option>
+                        <option value="11">11</option>
+					    <option value="12">12</option>
+					    <option value="13">13</option>
+					    <option value="14">14</option>
+                        <option value="15">15</option>
+                    </select>
+                </div>
+                <div class="profile-info">
+                    <label for="CourseType">Course type:</label>
+                    <select id="CourseType" name="CourseType">
+                        <option value="LAB">LAB</option>
+                        <option value="Theory">Theory</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="Con">Save</button>
+            </form>
+            <ul>
+            <a href="consultation.html" class="Con">Request Consultation</a>
+			<a href="previous.html" class="Con">Previous Consultaion</a>
+			</ul>
+        </div>
+    </main>
+</body>
+</html>
