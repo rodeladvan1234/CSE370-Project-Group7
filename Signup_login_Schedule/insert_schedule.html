@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Interactive Consultation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        input[type="text"],
+        select {
+            width: calc(100% - 18px); /* Adjusted width to accommodate padding */
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .course-group {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .course-group h3 {
+            margin-top: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+	    
+        <h1>Welcome to Interactive Consultation System</h1>
+
+        <div>
+            <h2>Enter Your Schedule</h2>
+			<form action="insert_schedule.php" method="POST">
+                <!-- Semester -->
+                <label for="semester">Semester:</label>
+				<select id="semester" name="semester" required>
+                        <option value="Spring 24">Spring 24</option>
+						<option value="Summer 24">Summer 24</option>
+						<option value="Fall 24">Fall 24</option><br>
+				</select><br>
+
+                <!-- Course 1 -->
+                <div class="course-group">
+                    <h3>Course 1</h3>
+                    <label for="course1">Course Name:</label>
+                    <select id="course1" name="courses[1][course_name]" required>
+                        <option value="CSE110">CSE110</option>
+                        <option value="CSE111">CSE111</option>
+						<option value="CSE220">CSE220</option>
+                        <option value="CSE221">CSE221</option>
+                        <option value="CSE250">CSE250</option>
+						<option value="CSE251">CSE251</option>
+						<option value="PHY111">PHY111</option>
+                        <option value="PHY112">PHY112</option>
+						<option value="CSE330">CSE330</option>
+                        <option value="CSE331">CSE331</option>
+						<option value="CSE341">CSE341</option>
+                        <option value="CSE350">CSE350</option>
+						<option value="CSE360">CSE360</option>
+                        <option value="CSE370">CSE370</option>
+						<option value="CSE420">CSE420</option>
+						<option value="CSE421">CSE421</option>
+                        <option value="CSE422">CSE422</option>
+						<option value="CSE423">CSE423</option>
+						<option value="EEE101">EEE101</option>
+                        <option value="EEE201">EEE201</option>
+						<option value="EEE203">EEE203</option>
+                        <option value="EEE205">EEE205</option>
+						<option value="EEE221">EEE221</option>
+                    </select><br>
+
+                    <label for="section1">Section:</label>
+                    <select id="section1" name="courses[1][section]" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+						<option value="3">3</option>
+                        <option value="4">4</option>
+						<option value="5">5</option>
+                        <option value="6">6</option>
+						<option value="7">7</option>
+                        <option value="8">8</option>
+						<option value="9">9</option>
+                        <option value="10">10</option>
+                    </select><br>
+					
+
+                    <label for="type1">Type:</label>
+                    <select id="type1" name="courses[1][type]" required>
+                        <option value="Lab">Lab</option>
+                        <option value="Theory">Theory</option>
+                    </select><br><br>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-group">
+                    <h3>Course 2</h3>
+                    <label for="course2">Course Name:</label>
+                    <select id="course2" name="courses[2][course_name]" required>
+                        <option value="CSE110">CSE110</option>
+                        <option value="CSE111">CSE111</option>
+						<option value="CSE220">CSE220</option>
+                        <option value="CSE221">CSE221</option>
+                        <option value="CSE250">CSE250</option>
+						<option value="CSE251">CSE251</option>
+						<option value="PHY111">PHY111</option>
+                        <option value="PHY112">PHY112</option>
+						<option value="CSE330">CSE330</option>
+                        <option value="CSE331">CSE331</option>
+						<option value="CSE341">CSE341</option>
+                        <option value="CSE350">CSE350</option>
+						<option value="CSE360">CSE360</option>
+                        <option value="CSE370">CSE370</option>
+						<option value="CSE420">CSE420</option>
+						<option value="CSE421">CSE421</option>
+                        <option value="CSE422">CSE422</option>
+						<option value="CSE423">CSE423</option>
+						<option value="EEE101">EEE101</option>
+                        <option value="EEE201">EEE201</option>
+						<option value="EEE203">EEE203</option>
+                        <option value="EEE205">EEE205</option>
+						<option value="EEE221">EEE221</option>
+                    </select><br>
+
+                    <label for="section2">Section:</label>
+                    <select id="section2" name="courses[2][section]" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+						<option value="3">3</option>
+                        <option value="4">4</option>
+						<option value="5">5</option>
+                        <option value="6">6</option>
+						<option value="7">7</option>
+                        <option value="8">8</option>
+						<option value="9">9</option>
+                        <option value="10">10</option>
+                    </select><br>
+					
+
+                    <label for="type2">Type:</label>
+                    <select id="type2" name="courses[2][type]" required>
+                        <option value="Lab">Lab</option>
+                        <option value="Theory">Theory</option>
+                    </select><br><br>
+                </div>
+				<!-- Course 3 -->
+                <div class="course-group">
+                    <h3>Course 3</h3>
+                    <label for="course3">Course Name:</label>
+                    <select id="course3" name="courses[3][course_name]" required>
+                        <option value="CSE110">CSE110</option>
+                        <option value="CSE111">CSE111</option>
+						<option value="CSE220">CSE220</option>
+                        <option value="CSE221">CSE221</option>
+                        <option value="CSE250">CSE250</option>
+						<option value="CSE251">CSE251</option>
+						<option value="PHY111">PHY111</option>
+                        <option value="PHY112">PHY112</option>
+						<option value="CSE330">CSE330</option>
+                        <option value="CSE331">CSE331</option>
+						<option value="CSE341">CSE341</option>
+                        <option value="CSE350">CSE350</option>
+						<option value="CSE360">CSE360</option>
+                        <option value="CSE370">CSE370</option>
+						<option value="CSE420">CSE420</option>
+						<option value="CSE421">CSE421</option>
+                        <option value="CSE422">CSE422</option>
+						<option value="CSE423">CSE423</option>
+						<option value="EEE101">EEE101</option>
+                        <option value="EEE201">EEE201</option>
+						<option value="EEE203">EEE203</option>
+                        <option value="EEE205">EEE205</option>
+						<option value="EEE221">EEE221</option>
+                    </select><br>
+
+                    <label for="section3">Section:</label>
+                    <select id="section3" name="courses[3][section]" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+						<option value="3">3</option>
+                        <option value="4">4</option>
+						<option value="5">5</option>
+                        <option value="6">6</option>
+						<option value="7">7</option>
+                        <option value="8">8</option>
+						<option value="9">9</option>
+                        <option value="10">10</option>
+                    </select><br>
+					
+
+                    <label for="type3">Type:</label>
+                    <select id="type3" name="courses[3][type]" required>
+                        <option value="Lab">Lab</option>
+                        <option value="Theory">Theory</option>
+                    </select><br><br>
+                </div>
+				<!-- Course 4 -->
+                <div class="course-group">
+                    <h3>Course 4</h3>
+                    <label for="course4">Course Name:</label>
+                    <select id="course4" name="courses[4][course_name]" required>
+                        <option value="CSE110">CSE110</option>
+                        <option value="CSE111">CSE111</option>
+						<option value="CSE220">CSE220</option>
+                        <option value="CSE221">CSE221</option>
+                        <option value="CSE250">CSE250</option>
+						<option value="CSE251">CSE251</option>
+						<option value="PHY111">PHY111</option>
+                        <option value="PHY112">PHY112</option>
+						<option value="CSE330">CSE330</option>
+                        <option value="CSE331">CSE331</option>
+						<option value="CSE341">CSE341</option>
+                        <option value="CSE350">CSE350</option>
+						<option value="CSE360">CSE360</option>
+                        <option value="CSE370">CSE370</option>
+						<option value="CSE420">CSE420</option>
+						<option value="CSE421">CSE421</option>
+                        <option value="CSE422">CSE422</option>
+						<option value="CSE423">CSE423</option>
+						<option value="EEE101">EEE101</option>
+                        <option value="EEE201">EEE201</option>
+						<option value="EEE203">EEE203</option>
+                        <option value="EEE205">EEE205</option>
+						<option value="EEE221">EEE221</option>
+                    </select><br>
+
+                    <label for="section4">Section:</label>
+                    <select id="section4" name="courses[4][section]" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+						<option value="3">3</option>
+                        <option value="4">4</option>
+						<option value="5">5</option>
+                        <option value="6">6</option>
+						<option value="7">7</option>
+                        <option value="8">8</option>
+						<option value="9">9</option>
+                        <option value="10">10</option>
+                    </select><br>
+					
+
+                    <label for="type4">Type:</label>
+                    <select id="type4" name="courses[4][type]" required>
+                        <option value="Lab">Lab</option>
+                        <option value="Theory">Theory</option>
+                    </select><br><br>
+                </div>
+
+
+                <button type="submit">Submit Schedule</button>
+            </form>
+        </div>
+    </div>
+	
+
+</body>
+</html>
