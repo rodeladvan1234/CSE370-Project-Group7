@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,7 +78,13 @@
 </head>
 <body>
 <main>
-    <a href="consultation.html">Back to Consultation Dashboard</a>
+    <a href="consultation.html">Back to Consultation Dashboard</a> 
+    <div id='logout'>
+        <form action="logout.php" method="post">
+            <button type="submit" class="btn-danger" name="logout">Logout</button>
+        </form>
+    </div>
+    
     <section class="Consulting Dashboard">
         <div class="Consulting_Dashboard">
             <form action="action_page.php" style="border:1px solid #ccc">
@@ -97,7 +104,10 @@
                                 <th>Student Name</th>
                                 <th>Review</th>
                             </tr>
-                            <?php include 'previous.php'; ?>
+                            <?php
+                            include 'previous.php';
+                            ?>
+
                         </table>
                     </div>
                 </div>

@@ -88,7 +88,16 @@
     <h1>Interactive Consultation System | ICS</h1>
 </header>
 <main>
+    <div>
     <a href="consultation.html">Back to Consultation Dashboard</a>
+
+    <div id='logout'>
+        <form action="logout.php" method="post">
+            <button type="submit" class="btn-danger" name="logout">Logout</button>
+        </form>
+    </div>
+    
+    </div>
     <section class="Consulting Dashboard">
         <div class="Consulting_Dashboard">
             <form action="ongoingConso.php?faculty_id=<?php echo $_GET['faculty_id']; ?>" method="POST" style="border:1px solid #ccc">
