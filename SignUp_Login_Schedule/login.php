@@ -1,5 +1,13 @@
 <?php
+
 require_once('DBconnect.php');
+session_start();
+if(isset($_SESSION['user_id'])){
+    $user_id = $_SESSION['user_id'];
+    echo "User ID: $user_id";
+} else {
+    echo "User ID not set in session.";
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['user_id']) && isset($_POST['password'])) {
