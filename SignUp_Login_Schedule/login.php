@@ -3,6 +3,7 @@ require_once('DBconnect.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['user_id']) && isset($_POST['password'])) {
+	$_SESSION['user_id'] = $_POST['user_id'];
         // Retrieve form data
         $user_id = $_POST['user_id'];
         $password = $_POST['password'];
