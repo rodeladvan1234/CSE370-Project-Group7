@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } elseif ($firstChar === '2') {
             $dashboard_url = "Student_Dashboard.html?user_id=$user_id";
         } elseif ($firstChar === '3') {
-            $dashboard_url = "ST_Dashboard.html?user_id=$user_id";
+            $dashboard_url = "Student_tutor_Dashboard.html?user_id=$user_id";
         } else {
             echo "Invalid user ID.";
             exit();
