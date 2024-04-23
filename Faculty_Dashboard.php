@@ -107,7 +107,6 @@ $stResult = mysqli_query($conn, $stQuery);
                 <table class="table">
                     <thead>
                         <tr>
-							<th>Select operat
                             <th>Select</th>
                             <th>UserID</th>
                             <th>Student ID</th>
